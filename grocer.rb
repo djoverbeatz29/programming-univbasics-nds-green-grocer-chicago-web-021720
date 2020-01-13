@@ -38,12 +38,6 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-end
-
-def apply_clearance(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
   
   result = []
   for coupon_item in coupons do
@@ -60,6 +54,12 @@ def apply_clearance(cart)
     end
   end
   result
+end
+
+def apply_clearance(cart)
+  # Consult README for inputs and outputs
+  #
+  # REMEMBER: This method **should** update cart
 end
 
 def checkout(cart, coupons)
