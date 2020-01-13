@@ -40,7 +40,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   for coupon_item in coupons do
     for cart_item in cart do
-      if coupon_item[:item] == cart_item[:item]
+      if (coupon_item[:item] == cart_item[:item]) && (cart_item[:count] >= coupon_item[:num])
         cart_item[:count] -= coupon_item[:num]
         cart.push({
           :item => coupon_item[:item] + " W/COUPON",
