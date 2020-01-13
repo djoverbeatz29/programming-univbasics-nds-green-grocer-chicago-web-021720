@@ -44,6 +44,22 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
+  result = []
+  for coupon_item in coupons do
+    for cart_item in carts do
+      if coupon_item[:item] == cart_item[:item]
+        cart_item[:count] -= coupon_item[:num]
+        cart.push({
+          :item => coupon_item[:item] + " W/COUPON",
+          :price => coupon_item[:cost] / coupon_item[:num],
+          :clearance => cart_item[:clearance],
+          :count => coupon_item[:num]
+          })
+      end
+    end
+  end
+  result
 end
 
 def checkout(cart, coupons)
