@@ -18,8 +18,8 @@ def consolidate_cart(cart)
   
   result = []
   for cart_item in cart do
+    no_match = true
     for result_item in result do
-      no_match = true
       if cart_item[:item] == result_item[:item]
         result_item[:count] += 1
         break
