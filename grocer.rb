@@ -60,7 +60,7 @@ def apply_clearance(cart)
   # REMEMBER: This method **should** update cart
   for cart_item in cart do
     if cart_item[:clearance]
-      cart_item[:price] *= 0.8
+      cart_item[:price] = (cart_item[:price] * 0.8).round(2)
     end
   end
   cart
@@ -87,5 +87,5 @@ def checkout(cart, coupons)
     grand_total += cart_item[:price] * cart_item[:count]
   end
   
-  grand_total
+  grand_total * (1 - 0.1 * (grand_total >))
 end
