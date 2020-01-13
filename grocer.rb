@@ -76,4 +76,15 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  
+  grand_total = 0
+  
+  cart = consolidate_cart(cart)
+  cart = apply_coupons(cart, coupons)
+  cart = apply_clearance(cart)
+  
+  for cart_item in cart do
+    grand_total += cart_item[:price] * cart_item[:count]
+  end
+  
 end
