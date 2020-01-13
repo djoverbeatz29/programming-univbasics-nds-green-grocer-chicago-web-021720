@@ -38,7 +38,6 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  result = []
   for coupon_item in coupons do
     for cart_item in cart do
       if coupon_item[:item] == cart_item[:item]
@@ -52,7 +51,7 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-  result
+  cart
 end
 
 def apply_clearance(cart)
