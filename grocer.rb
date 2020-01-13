@@ -38,7 +38,6 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  
   result = []
   for coupon_item in coupons do
     for cart_item in cart do
