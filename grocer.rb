@@ -41,7 +41,7 @@ def apply_coupons(cart, coupons)
   
   result = []
   for coupon_item in coupons do
-    for cart_item in carts do
+    for cart_item in cart do
       if coupon_item[:item] == cart_item[:item]
         cart_item[:count] -= coupon_item[:num]
         cart.push({
