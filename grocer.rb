@@ -21,6 +21,7 @@ def consolidate_cart(cart)
     no_match = true
     for result_item in result do
       if cart_item[:item] == result_item[:item]
+        no_match = false
         result_item[:count] += 1
         break
       end
